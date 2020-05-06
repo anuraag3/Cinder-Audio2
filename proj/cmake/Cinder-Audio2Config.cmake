@@ -19,6 +19,10 @@ if(NOT TARGET Cinder-Audio2)
     # So you need to set `../../src/` to include.
     target_include_directories(Cinder-Audio2 PUBLIC "${Cinder-Audio2_PROJECT_ROOT}/src" )
     target_include_directories(Cinder-Audio2 SYSTEM BEFORE PUBLIC "${CINDER_PATH}/include" )
+    target_include_directories(Cinder-Audio2 PRIVATE
+            "${Cinder-Audio2_PROJECT_ROOT}/src/cinder"
+            "${Cinder-Audio2_PROJECT_ROOT}/src/oggvorbis"
+            "${Cinder-Audio2_PROJECT_ROOT}/src/r8brain")
 
 
     # If your Cinder block has no source code but instead pre-build libraries,
